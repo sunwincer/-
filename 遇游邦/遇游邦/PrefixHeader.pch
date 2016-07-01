@@ -1,0 +1,72 @@
+//
+//  PrefixHeader.pch
+//  遇游邦
+//
+//  Created by 孙文策 on 16/6/28.
+//  Copyright © 2016年 孙文策. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/*Xcode7以下版本需要添加下方宏定义 支持AF*/
+#ifdef TARGET_OS_IOS
+
+#define TARGET_OS_IOS TARGET_OS_IPHONE
+
+#endif
+
+#ifndef TARGET_OS_WATCH
+
+#define TARGET_OS_WATCH 0
+
+#endif
+/*Xcode7以下版本需要添加上方宏定义 支持AF*/
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "AppDelegate.h"
+
+//用于存放全局宏定义 或者 静态字符串
+#import "Constans.h"
+
+
+#import <AFNetworking.h>        //Github排名第一的第三方网络请求类库，封装了系统的NSURLSession+NSOperation
+#import <UIKit+AFNetworking.h>      //对UIKit类添加类拓展，让诸如UIButton, UIImageView等拥有了网络加载图片的功能
+
+
+/* 改变系统的target+selector模式为 block模式。 带来紧凑的代码风格，高效率的回调执行 */
+#import <BlocksKit.h>
+#import <BlocksKit+MessageUI.h>
+#import <BlocksKit+UIKit.h>
+/* --------------------------- */
+
+
+
+#import <MJRefresh.h>    //优秀的滚动视图头部和脚步刷新效果
+#import <MJExtension.h>     //优秀的Json解析类库
+
+#import <CocoaLumberjack.h> //优秀的替换NSLog的第三方，更加省资源，并且可以定义打印级别
+#ifdef DEBUG
+static const int ddLogLevel = DDLogLevelVerbose;
+#else
+static const int ddLogLevel = DDLogLevelError;
+#endif
+
+#import <MBProgressHUD.h>       //实现安卓toast风格提示，弹出提示框架
+
+#import <Masonry.h>         //超好用的链式书写AutoLayout的第三方类库，好用的根本停不下来
+
+//#import "NSObject+Common.h"       //个人添加的在界面上弹出提示的类拓展
+
+#import <MWPhotoBrowser.h>      //图片浏览器
+
+
+#import "UIBarButtonItem+YYBExtension.h"
+#import "UIView+YYBExtension.h"
+#import "UIImage+OrigionImage.h"
+
+#endif /* PrefixHeader_pch */

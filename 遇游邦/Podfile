@@ -1,0 +1,20 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '8.0'
+# Uncomment this line if you're using Swift
+# use_frameworks!
+
+target '遇游邦' do
+
+
+pod 'BlocksKit'
+pod 'SDWebImage'
+pod 'AFNetworking'
+pod 'MJExtension'
+pod 'Masonry'
+pod 'CocoaLumberjack'
+pod 'MBProgressHUD'
+pod 'MJRefresh'
+pod 'MLTransition'
+pod 'MWPhotoBrowser'
+end
+
